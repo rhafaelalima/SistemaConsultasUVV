@@ -1,0 +1,29 @@
+@model SistemaConsultasUVV.Models.Consulta
+@{ ViewData["Title"] = "Editar Consulta"; }
+
+<h2>Editar Consulta</h2>
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="UsuarioId" />
+    <div class="mb-3">
+        <label>Médico</label>
+        <input asp-for="Medico" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label>Especialidade</label>
+        <input asp-for="Especialidade" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label>Data e Hora</label>
+        <input asp-for="DataHora" type="datetime-local" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label>Status</label>
+        <select asp-for="Status" class="form-control">
+            <option value="Agendada">Agendada</option>
+            <option value="Realizada">Realizada</option>
+            <option value="Cancelada">Cancelada</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>

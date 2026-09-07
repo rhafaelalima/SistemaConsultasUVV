@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Início";
+}
+
+<div class="row align-items-center py-5">
+    <div class="col-md-6">
+        <h1 class="display-4 fw-bold text-primary mb-3">Sistema de Gestão de Consultas UVV</h1>
+        <p class="lead text-muted mb-4">
+            Plataforma acadêmica para agendamento e acompanhamento de consultas médicas de forma simples e organizada.
+        </p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            @if (User.Identity != null && User.Identity.IsAuthenticated)
+            {
+                <a asp-controller="Consultas" asp-action="Index" class="btn btn-primary btn-lg px-4 me-md-2">Minhas Consultas</a>
+                <a asp-controller="Consultas" asp-action="Create" class="btn btn-outline-secondary btn-lg px-4">Agendar Consulta</a>
+            }
+            else
+            {
+                <a asp-controller="Account" asp-action="Register" class="btn btn-primary btn-lg px-4 me-md-2">Criar Conta</a>
+                <a asp-controller="Account" asp-action="Login" class="btn btn-outline-secondary btn-lg px-4">Entrar no Sistema</a>
+            }
+        </div>
+    </div>
+    <div class="col-md-6 text-center mt-4 mt-md-0">
+        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" 
+             alt="Atendimento Médico" 
+             class="img-fluid rounded-3 shadow" />
+    </div>
+</div>

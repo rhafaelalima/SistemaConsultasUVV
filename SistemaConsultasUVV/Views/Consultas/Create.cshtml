@@ -1,0 +1,37 @@
+@model SistemaConsultasUVV.Models.Consulta
+@{ 
+    ViewData["Title"] = "Agendar Consulta"; 
+}
+
+<h2>Agendar Consulta</h2>
+
+<form asp-action="Create" method="post" lang="pt-BR">
+    <div class="mb-3">
+        <label class="form-label">Médico</label>
+        <input asp-for="Medico" class="form-control" />
+        <span asp-validation-for="Medico" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Especialidade</label>
+        <input asp-for="Especialidade" class="form-control" />
+        <span asp-validation-for="Especialidade" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Data e Hora</label>
+        <input asp-for="DataHora" 
+               type="datetime-local" 
+               class="form-control" 
+               value="@Model?.DataHora.ToString("yyyy-MM-ddTHH:mm")" />
+        <span asp-validation-for="DataHora" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Observações</label>
+        <textarea asp-for="Observacoes" class="form-control" rows="3"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Agendar</button>
+    <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+</form>
