@@ -10,7 +10,16 @@ Projeto desenvolvido para a disciplina de Desenvolvimento Web Back-end (UVV).
 
 ## 🛠️ Como Executar o Projeto
 
-1. Configurar a Connection String em `appsettings.json` apontando para a sua instância do SQL Server.
-2. Executar a migração do banco no terminal:
+1. Configurar a *Connection String* no arquivo `appsettings.json` apontando para a sua instância local do SQL Server.
+2. Executar as migrações para criar e atualizar o banco de dados:
+   - **Via Terminal / VS Code (.NET CLI):**
+     ```bash
+     dotnet ef database update
+     ```
+   - **Via Visual Studio (Console do Gerenciador de Pacotes):**
+     ```powershell
+     Update-Database
+     ```
+3. Executar o projeto:
    ```bash
-   dotnet ef database update
+   dotnet run
